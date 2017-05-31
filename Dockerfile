@@ -8,6 +8,6 @@ RUN apt-get update \
     && mv htdocs/* . \
     && rm -rf htdocs \
     && chown -R www-data:www-data . \
-    && apt-get clean all \
+    && apt-get clean all 
 EXPOSE 80 443
 CMD ["apache2-foreground"]
