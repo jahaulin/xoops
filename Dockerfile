@@ -7,7 +7,8 @@ RUN apt-get update \
     && unzip XoopsCore25-2.5.8_tw_20160616.zip \
     && mv htdocs/* . \
     && rm -rf htdocs \
-    && chown -R www-data:www-data .
+    && chown -R www-data:www-data . \
+    && apt-get clean all
 
 EXPOSE 80 443
 CMD ["apache2-foreground"]
