@@ -1,4 +1,4 @@
-FROM PHP:5-apache
+FROM php:5-apache
 
 WORKDIR /var/www/html
 RUN apt-get install unzip \
