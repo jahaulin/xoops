@@ -10,6 +10,6 @@ RUN apt-get update \
     && rm -rf XoopsCore25-2.5.8 \
     && chown -R www-data:www-data . \
     && apt-get clean all \
-    && chmod 711 start.sh
+    && chmod 711 /usr/local/bin/start.sh
 EXPOSE 80 443
 CMD ["/usr/local/bin/start.sh"]
