@@ -9,8 +9,6 @@ RUN apt-get update \
     && rm -rf XoopsCore25-2.5.8 \
     && chown -R www-data:www-data . \
     && apt-get clean all \
-    && mkdir -p /var/www/html/uploads/avatars/ \
-    && mkdir    /var/www/html/uploads/smilies/ \
     && chmod -R 777 /var/www/html/uploads \
     && chmod -R 777 /var/www/html/xoops_lib/modules/protector/configs/ \
     && chmod -R 777 /var/www/html/include/license.php \
