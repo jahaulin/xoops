@@ -1,6 +1,5 @@
 FROM php:5-apache
 
-ADD start.sh /usr/local/bin
 WORKDIR /var/www/html
 RUN apt-get update \
     && apt-get install -y wget unzip \
@@ -10,6 +9,21 @@ RUN apt-get update \
     && rm -rf XoopsCore25-2.5.8 \
     && chown -R www-data:www-data . \
     && apt-get clean all \
-    && chmod 711 /usr/local/bin/start.sh
+    && mkdir -p /var/www/html/uploads/avatars/ \
+    && mkdir    /var/www/html/uploads/images/ \
+    && mkdir    /var/www/html/uploads/ranks/ \
+    && mkdir    /var/www/html/uploads/smilies/ \
+    && chmod -R 777 /var/www/html/uploads \
+    && chmod -R 777 /var/www/html/xoops_lib/modules/protector/configs/ \
+    && chmod -R 777 /var/www/html/include/license.php \
+    && mv /var/www/html/xoops_lib /var/www/ \
+    && mv /var/www/html/xoops_data /var/www/ \
+    && chmod -R 777 /var/www/xoops_data/caches \
+    && chmod -R 777 /var/www/xoops_data/caches/xoops_cache \
+    && chmod -R 777 /var/www/xoops_data/caches/smarty_cache \
+    && chmod -R 777 /var/www/xoops_data/caches/smarty_compile \
+    && chmod -R 777 /var/www/xoops_data/configs \
+    && chmod -R 777 /var/www/xoops_data/data
+
 EXPOSE 80 443
-CMD ["/usr/local/bin/start.sh"]
+CMD ["apache2-foreground"]
