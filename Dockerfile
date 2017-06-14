@@ -12,4 +12,4 @@ RUN apt-get update \
     && apt-get clean all \
     && chmod 711 start.sh
 EXPOSE 80 443
-CMD ["start.sh"]
+CMD ["/usr/local/bin/start.sh"]
