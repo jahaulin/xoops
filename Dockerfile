@@ -1,6 +1,6 @@
 FROM php:5-apache
 
-ADD start.sh /sbin
+ADD start.sh /usr/local/bin
 WORKDIR /var/www/html
 RUN apt-get update \
     && apt-get install -y wget unzip \
