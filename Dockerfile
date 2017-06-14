@@ -10,7 +10,6 @@ RUN apt-get update \
     && chown -R www-data:www-data . \
     && apt-get clean all \
     && mkdir -p /var/www/html/uploads/avatars/ \
-    && mkdir    /var/www/html/uploads/images/ \
     && mkdir    /var/www/html/uploads/ranks/ \
     && mkdir    /var/www/html/uploads/smilies/ \
     && chmod -R 777 /var/www/html/uploads \
