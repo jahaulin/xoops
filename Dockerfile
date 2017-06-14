@@ -1,5 +1,6 @@
 FROM php:5-apache
 
+ADD start.sh /sbin
 WORKDIR /var/www/html
 RUN apt-get update \
     && apt-get install -y wget unzip \
@@ -8,6 +9,7 @@ RUN apt-get update \
     && mv XoopsCore25-2.5.8/htdocs/* . \
     && rm -rf XoopsCore25-2.5.8 \
     && chown -R www-data:www-data . \
-    && apt-get clean all
+    && apt-get clean all \
+    && chmod 711 start.sh
 EXPOSE 80 443
-CMD ["apache2-foreground"]
+CMD ["start.sh"]
