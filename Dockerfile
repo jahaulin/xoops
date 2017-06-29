@@ -3,7 +3,6 @@ FROM php:5-apache
 WORKDIR /var/www/html
 RUN apt-get update \
     && apt-get install -y wget unzip libpng-dev libjpeg-progs libvpx-dev \
-    && docker-php-ext-configure mysqli gd exif \
     && docker-php-ext-install mysqli gd exif \
     && apt-get clean all \
     && wget 'http://campus-xoops.tn.edu.tw/modules/tad_uploader/index.php?op=dlfile&cfsn=121&cat_sn=16&name=xoopscore25-2.5.8_tw_20160616.zip' -O xoops.zip \
