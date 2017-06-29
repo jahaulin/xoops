@@ -2,13 +2,15 @@ FROM php:5-apache
 
 WORKDIR /var/www/html
 RUN apt-get update \
-    && apt-get install -y wget unzip \
+    && apt-get install -y wget unzip libpng-dev libjpeg-progs libvpx-dev \
+    && docker-php-ext-configure mysqli gd exif \
+    && docker-php-ext-install mysqli gd exif \
+    && apt-get clean all \
     && wget 'http://campus-xoops.tn.edu.tw/modules/tad_uploader/index.php?op=dlfile&cfsn=121&cat_sn=16&name=xoopscore25-2.5.8_tw_20160616.zip' -O xoops.zip \
     && unzip xoops.zip \
     && mv XoopsCore25-2.5.8/htdocs/* . \
     && rm -rf XoopsCore25-2.5.8 \
     && chown -R www-data:www-data . \
-    && apt-get clean all \
     && chmod -R 777 /var/www/html/uploads \
     && chmod -R 777 /var/www/html/xoops_lib/modules/protector/configs/ \
     && chmod -R 777 /var/www/html/include/license.php \
