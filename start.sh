@@ -7,8 +7,7 @@ if [ ! -d /var/www/html/uploads ]; then
   mkdir    /var/www/html/uploads/smilies/
   chmod -R 777 /var/www/html/uploads
 fi
-if [ ! -d /var/www/xoops_lib/]; then
-  mv /var/www/html/xoops_lib /var/www/
+if [  -d /var/www/xoops_lib/html/xoops_lib/modules/protector/configs]; then
   chmod -R 777 /var/www/html/xoops_lib/modules/protector/configs/
 fi
 if [ -f /var/www/html/include/license.php ]; then
