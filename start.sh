@@ -13,9 +13,9 @@ fi
 if [ -f /var/www/html/include/license.php ]; then
    chmod -R 777 /var/www/html/include/license.php
 fi
-if [ ! -d /var/www/xoops_lib ]; then
-   mv /var/www/html/xoops_lib /var/www/
-fi
+#if [ ! -d /var/www/xoops_lib/modules ]; then
+#   mv /var/www/html/xoops_lib /var/www/
+#fi
 if [ ! -d /var/www/xoops_data ]; then
    mv /var/www/html/xoops_data /var/www/
    chmod -R 777 /var/www/xoops_data/caches
