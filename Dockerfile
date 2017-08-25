@@ -11,10 +11,10 @@ RUN apt-get update \
     && rm -rf XoopsCore25-2.5.9 \
     && chown -R www-data:www-data . \
     && chmod -R 777 /var/www/html/uploads \
-    && chmod -R 777 /var/www/html/xoops_lib/modules/protector/configs \
     && chmod -R 777 /var/www/html/include/license.php \
     && mv /var/www/html/xoops_lib /var/www/ \
     && mv /var/www/html/xoops_data /var/www/ \
+    && chmod -R 777 /var/www/html/xoops_lib/modules/protector/configs \
     && chmod -R 777 /var/www/xoops_data/caches \
     && chmod -R 777 /var/www/xoops_data/caches/xoops_cache \
     && chmod -R 777 /var/www/xoops_data/caches/smarty_cache \
