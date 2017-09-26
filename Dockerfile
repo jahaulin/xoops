@@ -25,4 +25,5 @@ RUN apt-get update \
     && chmod -R 777 /var/www/xoops_data/data
 
 EXPOSE 80 443
+USER www-data
 CMD ["apache2-foreground"]
