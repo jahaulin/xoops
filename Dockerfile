@@ -1,5 +1,6 @@
 FROM php:5-apache
 
+ADD memory-limit.ini /usr/local/etc/php/conf.d/
 WORKDIR /var/www/html
 RUN apt-get update \
     && apt-get install -y wget unzip libpng-dev libjpeg-progs libvpx-dev \
